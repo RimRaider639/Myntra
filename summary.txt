@@ -1,1 +1,6 @@
+Filter limitation
+-doesn't work in conjuction (cannot filter by brand and price at the same time)
+sol: filtering out of filtered data
+
+Contributors:
 <a href="https://iconscout.com/icons/myntra" target="_blank">Myntra Logo Icon</a> by <a href="https://iconscout.com/contributors/icon-mafia" target="_blank">Icon Mafia</a>

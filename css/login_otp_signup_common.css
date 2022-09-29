@@ -1,0 +1,55 @@
+body{
+    background-color: #fdedf0;
+}
+#container{
+    width: 400px;
+    margin: 30px auto;
+    height:600px;
+    background-color: white;
+}
+/* login page image */
+#container>#coupon{
+    width: 100%;
+}
+#container>form{
+    padding: 40px;
+}
+#container>form>h2{
+    font-size: 21px;
+    color: #424553;
+    letter-spacing: 1.2px;
+}
+#container>form>h2>span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #80838e;
+}
+input{
+    height:40px;
+    margin: 25px 0;
+    font-size: 15px;
+}
+#container>form>input[type="tel"]{
+    padding-left: 56px;
+    padding-right: 24px;
+}
+#container>form>input[type="tel"]:focus{
+    cursor: text;
+    caret-color: #ff3f6c;
+}
+#container p{
+    color:#80838e;
+    font-size: 14px;
+}
+#container a{
+    color:#ff3f6c;
+    text-decoration: none;
+    font-weight: 600;
+}
+#container>form>input[type="submit"]{
+    background-color: #ff3f6c;
+    color:white;
+    border:none;
+    width: 100%;
+    cursor: pointer;
+}

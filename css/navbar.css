@@ -2,7 +2,7 @@ body{
     margin:0;
     font-family: 'Cabin', sans-serif;
 }
-a{
+#nav a{
     text-decoration: none;
     color:#282c3f;
 }
@@ -13,6 +13,7 @@ a{
     font-weight: 800;
     box-shadow: rgba(183, 183, 183, 0.4) 0px 2px 4px;
     position: sticky;
+    background-color: white;
 }
 /* logo */
 #nav>div:nth-child(1){
