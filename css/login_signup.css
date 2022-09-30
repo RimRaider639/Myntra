@@ -1,0 +1,15 @@
+#container #cd{
+    position:absolute;
+    margin-top: 37px;
+    margin-left: 10px;
+    font-size: 15px;
+
+}
+#container>form>input[type="tel"]{
+    color:#80838e;
+    border: 1px solid #80838e;
+}
+
+input{
+    width:240px;
+}

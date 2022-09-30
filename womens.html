@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens</title>
+    <link rel="shortcut icon" href="img/myntra.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        #body{
+            display: flex;
+        }
+        #filter{
+            display: flex;
+            flex-direction: column;
+        }
+        #container-parent{
+            width:80%;
+        }
+        #container{
+            width:100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            border: 1px solid black;
+        }
+        #container>div>img{
+            width: 100%;
+        }
+        #container p{
+            color:#282c3f;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .price>strike{
+            margin: 0 5px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #7e818c;
+        }
+        .price>span{
+            color:#ff905a;
+            font-size: 12px
+        }
+
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <div id="nav">
+        <div>
+            <img src="img/myntra_navbar_logo.png" alt="">
+        </div>
+        <div>
+            <div><a href="">MEN</a></div>
+            <div><a href="">WOMEN</a></div>
+            <div><a href="">KIDS</a></div>
+            <div><a href="">HOME & LIVING</a></div>
+            <div><a href="">BEAUTY</a></div>
+            <div><a href="">STUDIO</a></div>
+        </div>
+        <div>
+            <span class="material-symbols-outlined">
+                search
+                </span>
+            <input type="text" id="search" placeholder="Search for products, brands and more">
+        </div>
+        <div>
+            <div class="ic-text">
+                <span class="material-symbols-outlined">
+                    person
+                    </span>
+                <span>Profile</span>
+            </div>
+            <div class="ic-text">
+                <span class="material-symbols-outlined">
+                    favorite
+                    </span>
+                <span>Wishlist</span>
+            </div>
+            <div class="ic-text">
+                <span class="material-symbols-outlined">
+                    shopping_bag
+                    </span>
+                <span>Bag</span>
+            </div>
+        </div>
+    </div>
+    <!-- END OF NAVBAR -->
+
+    <div id="body">
+        <div id="filter"></div>
+        <div id="container-parent">
+            <div id="container"></div>
+        </div>
+        
+    </div>
+</body>
+<script src="js/storeData.js"></script>
+<script src="js/womensData.js"></script>
+<script src="js/commonFunc.js"></script>
+<script>
+    womensAll = womensAll.slice(0,20)
+    display(womensAll)
+    let data = womensAll;
+    let prices = prices_women;
+    let brands = brands_women;
+
+
+</script>
+
+<script src="js/filtering.js"></script>
+</html>
+</html>
+
