@@ -1,6 +1,7 @@
 input{
     width:28px;
-    margin-right: 20px 
+    margin-right: 20px;
+    border: 1px solid #80838e;
 }
 /* hiding the arrow buttons */
 /* Chrome, Safari, Edge, Opera */
@@ -13,4 +14,19 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+#otp_icon{
+  padding: 40px 0 0 40px;
+  width: 100px;
+}
+
+#container>form{
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#container>form>p{
+  margin-bottom: 20px;
 }

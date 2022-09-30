@@ -2,6 +2,11 @@ function display(list){
     document.querySelector("#container").innerHTML = null
     list.forEach(function(prod, index){
         let card = document.createElement('div')
+        card.addEventListener('click', function(){
+            console.log("id:",prod.product_id)
+            localStorage.setItem("prodID", prod.product_id)
+            window.location.href = "product.html"
+        })
         let imagesLinks = prod.images.split("|")
         let img = document.createElement("img")
         img.src = imagesLinks[0]
@@ -19,3 +24,14 @@ function display(list){
     })
     
 }
+
+// function displayProd(prodID){
+//     let product;
+//     objData.forEach(function(prod, i){
+//         if (prod.product_id == prodID){
+//             product = prod
+//             return
+//         }
+//     })
+    
+// }
