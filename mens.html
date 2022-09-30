@@ -12,87 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/common.css">
-
-    <style>
-        #body{
-            display: flex;
-        }
-        #filter{
-            display: flex;
-            flex-direction: column;
-        }
-        #container-parent{
-            width:80%;
-        }
-        #container{
-            width:100%;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
-            border: 1px solid black;
-        }
-        #container>div>img{
-            width: 100%;
-        }
-        #container p{
-            color:#282c3f;
-            font-size: 16px;
-            font-weight: 400;
-        }
-        .price>strike{
-            margin: 0 5px;
-            font-weight: 500;
-            font-size: 12px;
-            color: #7e818c;
-        }
-        .price>span{
-            color:#ff905a;
-            font-size: 12px
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/catalogue.css">
 </head>
 <body>
     <!-- navbar -->
-    <div id="nav">
-        <div>
-            <img src="img/myntra_navbar_logo.png" alt="">
-        </div>
-        <div>
-            <div><a href="">MEN</a></div>
-            <div><a href="">WOMEN</a></div>
-            <div><a href="">KIDS</a></div>
-            <div><a href="">HOME & LIVING</a></div>
-            <div><a href="">BEAUTY</a></div>
-            <div><a href="">STUDIO</a></div>
-        </div>
-        <div>
-            <span class="material-symbols-outlined">
-                search
-                </span>
-            <input type="text" id="search" placeholder="Search for products, brands and more">
-        </div>
-        <div>
-            <div class="ic-text">
-                <span class="material-symbols-outlined">
-                    person
-                    </span>
-                <span>Profile</span>
-            </div>
-            <div class="ic-text">
-                <span class="material-symbols-outlined">
-                    favorite
-                    </span>
-                <span>Wishlist</span>
-            </div>
-            <div class="ic-text">
-                <span class="material-symbols-outlined">
-                    shopping_bag
-                    </span>
-                <span>Bag</span>
-            </div>
-        </div>
-    </div>
+    <div id="nav"></div>
+    <script src="js/navbar.js"></script>
     <!-- END OF NAVBAR -->
 
     <div id="body">

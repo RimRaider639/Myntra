@@ -1,0 +1,35 @@
+#body{
+    display: flex;
+}
+#filter{
+    display: flex;
+    flex-direction: column;
+}
+#container-parent{
+    width:80%;
+}
+#container{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    border: 1px solid black;
+}
+#container>div>img{
+    width: 100%;
+}
+#container p{
+    color:#282c3f;
+    font-size: 16px;
+    font-weight: 400;
+}
+.price>strike{
+    margin: 0 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7e818c;
+}
+.price>span{
+    color:#ff905a;
+    font-size: 12px
+}

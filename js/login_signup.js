@@ -2,10 +2,20 @@
 document.querySelector('.ic-text:nth-Child(1)').style.display = "none"
 
 let card = document.querySelector('#container')
-// displayLogin()
-displayOTP()
+if (localStorage.getItem('phoneNum')){
+    displayOTP()
+} else{
+    displayLogin()
+}
 
 function displayLogin(){
+    // add respective stylesheet
+    let style = document.createElement('link')
+    style.rel = "stylesheet"
+    style.href = "css/login_signup.css"
+    document.head.append(style)
+    // document.querySelector('link[href = "css/login_otp_signup_common.css"]').remove()
+
     let img = document.createElement("img")
     img.id = "coupon"
     img.src = "img/coupon.png"
@@ -35,23 +45,30 @@ function displayLogin(){
 }
 
 function displayOTP(){
+    // add respective stylesheet
+    let style = document.createElement('link')
+    style.rel = "stylesheet"
+    style.href = "css/otp.css"
+    document.head.append(style)
+
     let img = document.createElement("img")
     img.id = "otp_icon"
     img.src = "img/otp_icon.png"
 
     let form = document.createElement('form')
-    form.addEventListener('submit', storeNum)
+    form.addEventListener('submit', storeOTP)
     let heading = document.createElement("h2")
     heading.innerHTML = "Verify with OTP"
     let numInfo = document.createElement('p')
     numInfo.innerText = "Sent to "+localStorage.getItem('phoneNum')
-    form.append(heading, numInfo)
+    let otpSec = document.createElement("div")
+    otpSec.id = "otp"
     for (let i=0; i<4; i++){
         let num = document.createElement('input')
         num.type="number"
         num.size = "1"
         num.maxLength = "1"
-        form.append(num)
+        otpSec.append(num)
     }
     let submit = document.createElement('input')
     submit.type = "submit"
@@ -62,17 +79,28 @@ function displayOTP(){
     pwd.innerHTML = "Login using <a href='#'>Password</a>"
     let help = document.createElement('p')
     help.innerHTML = "Having trouble logging in? <a href='#'>Get help</a>"
-    form.append(submit,resend, pwd, help)
+    form.append(heading, numInfo, otpSec, submit, resend, pwd, help)
     card.append(img, form)
 }
-function storeNum(){
-    console.log(isNaN(+mbl.value))
-    if (isNaN(+mbl.value)){
+function storeNum(event){
+    event.preventDefault()
+    let mbl = document.querySelector('#container>form>input').value
+    if (isNaN(mbl)){
         alert("Enter valid number!")
         return
     }
-    localStorage.setItem('phoneNum', mbl.value)
-    Validite(mbl.value)
+    localStorage.setItem('phoneNum', mbl)
+    window.location.reload()
+    validate(mbl)
+}
+
+function storeOTP(){
+    let otp = "";
+    for (let i=1; i<5; i++){
+        otp+= document.querySelector('#otp>input:nth-child('+i+')').value
+    }
+    localStorage.setItem("otp", otp)
+    console.log(otp)
 }
 
 function validate(num){
