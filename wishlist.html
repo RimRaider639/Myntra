@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Womens</title>
+    <title>Wishlist</title>
     <link rel="shortcut icon" href="img/myntra.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/catalogue.css">
+    <link rel="stylesheet" href="css/wishlist.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -20,41 +21,12 @@
     <div id="nav"></div>
     <script src="js/navbar.js"></script>
     <!-- END OF NAVBAR -->
-    <div id="heading">
-        <div id="page">Home/CLothing/<span>Women</span></div>
-        <h2>Women <span></span></h2>
-    </div>
-    <div id="horizontal">
-        <h3>FILTERS</h3>
-        <div>
-            <div>
-                Bundles 
-                <span class="material-symbols-outlined mb">expand_more</span>
-            </div>
-            <div>
-                Country of Origin
-                <span class="material-symbols-outlined">expand_more</span>
-            </div>
-            <div>
-                Size 
-                <span class="material-symbols-outlined">expand_more</span>
-            </div>
-        </div>
-        <select name="" id="sort">
-            <option value="">Recommended</option>
-            <option value="price_dsc">Price: High to Low</option>
-            <option value="price_asc">Price: Low to High</option>
-            <option value="discount_dsc">Better Discount</option>
-        </select>
-    </div>
-    <div id="body">
-        <div id="filter"></div>
-        <div id="container-parent">
-            <div id="container"></div>
-        </div>
-        <div id="page-nav"></div>
-    </div>
 
+    <div id="item-box">
+        <h2>My Wishlist <span>0</span> Items</h2>
+        <div id="items"></div>
+    </div>
+    
     <!-- Footer -->
     <div id="footer">
         <div id="_1">
@@ -84,24 +56,6 @@
     </div>
     <!-- End of Footer -->
 </body>
-<script src="js/storeData.js"></script>
-<script src="js/womensData.js"></script>
-<script src="js/commonFunc.js"></script>
-<script>
-    page_nav()
-    let pg_nav = document.querySelector('#page-nav button:nth-child(1)')
-    pg_nav.setAttribute('class', 'active')
-    document.querySelector('#heading>h2>span').innerText = '-'+womensAll.length+' items'
-    display(womensAll)
-    let data = womensAll;
-    let prices = prices_women;
-    let brands = brands_women;
-    console.log(prices_women, brands)
-</script>
-
-<script src="js/filtering.js"></script>
-<script src="js/sorting.js"></script>
+<script src="js/wishlist.js"></script>
 <script src="js/footer.js"></script>
 </html>
-</html>
-

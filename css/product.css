@@ -1,0 +1,24 @@
+#container-prod{
+    display: flex;
+    justify-content: space-around;
+}
+#model{
+    width:50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+#details{
+    width:40%;
+}
+#model>img{
+    width: 100%;
+}
+
+.material {
+font-variation-settings:
+'FILL' 1,
+'wght' 300,
+'GRAD' 200,
+'opsz' 48
+}

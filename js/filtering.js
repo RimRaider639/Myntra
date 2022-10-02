@@ -1,11 +1,13 @@
 let brands_to_filter = []
 let price_range_to_filter = []
+let filtered_price = []
+let filtered_brand = []
+let sorted_brands = [] 
     
     // filters
     // filter by brand
-    let brandLbl = document.createElement("h2")
-    brandLbl.innerText = "BRANDS"
     let brandSec = document.createElement("div")
+    brandSec.innerHTML = "<h3>BRANDS</h3>"
     let i = 0;
     for (let brand in brands){
         let check = document.createElement('input')
@@ -19,6 +21,8 @@ let price_range_to_filter = []
                 brands_to_filter.splice(brands_to_filter.indexOf(b.target.value), 1)
             }
             filter_by_brand()
+            reset_page()
+            displayFilteredProd()
         })
         let name = document.createElement("label")
         name.innerText = brand + " (" + brands[brand] + ")"
@@ -28,9 +32,8 @@ let price_range_to_filter = []
     }
 
     // filter by prices
-    let priceLbl = document.createElement("h2")
-    priceLbl.innerText = "PRICE"
     let priceSec = document.createElement("div")
+    priceSec.innerHTML = "<h3>PRICE</h3>"
     let j = 0;
     for (let range=1; range<=4; range++){
         let check = document.createElement('input')
@@ -43,8 +46,9 @@ let price_range_to_filter = []
             } else{
                 price_range_to_filter.splice(price_range_to_filter.indexOf(p.target.value), 1)
             }
-            console.log(price_range_to_filter)
             filter_by_price()
+            reset_page()
+            displayFilteredProd()
         })
         let name = document.createElement("label")
         name.innerText = (prices.min + prices.interval*(range-1)) + "-" + (prices.min + prices.interval*range) + " (" + prices[range].length + ")"
@@ -52,33 +56,44 @@ let price_range_to_filter = []
         priceSec.append(check, name, br)
         j++
     }
-    document.querySelector("#filter").append(brandLbl, brandSec, priceLbl, priceSec)
+    document.querySelector("#filter").append(brandSec, priceSec)
 
 function filter_by_brand(){
-    if (brands_to_filter.length == 0){
-        display(data)
-        return
-    }
-    filtered = data.filter(function(prod){
-        return brands_to_filter.includes(prod.brand)
+    let filtered = []
+    data.forEach(function(prod){
+        if (brands_to_filter.includes(prod.brand)){
+            filtered.push(prod.product_id)
+        }
     })
-    display(filtered)
+    filtered_brand = filtered
 }
 function filter_by_price(){
-    if (price_range_to_filter.length == 0){
-        display(data)
-        return
-    }
-    filtered = []
+    let filtered = []
     price_range_to_filter.forEach(function(range){
         prices[range].forEach(function(id){
-            data.forEach(function(prod){
-                if (prod.product_id==id && !filtered.includes(prod)){
-                    filtered.push(prod)
-                }
-            })
+            if (!filtered.includes(id)){
+                filtered.push(id)
+            }
         })
     })
-    console.log(filtered)
-    display(filtered)
+    filtered_price = filtered
+}
+
+function displayFilteredProd(){
+    filtered = []
+    data.forEach(function(prod){
+        if (filtered_price.includes(prod.product_id) && filtered_brand.includes(prod.product_id)){
+            filtered.push(prod)
+        } else if(filtered_price.length===0 && filtered_brand.includes(prod.product_id)){
+            filtered.push(prod)
+        } else if(filtered_brand.length===0 && filtered_price.includes(prod.product_id)){
+            filtered.push(prod)
+        } 
+    })
+    if (brands_to_filter.length===0 && price_range_to_filter.length===0){
+        display(data)
+    } else{
+        display(filtered)
+    }
+    
 }

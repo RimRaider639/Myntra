@@ -1,19 +1,44 @@
 #body{
+    display:grid;
+    grid-template-columns: 300px 1fr;
+}
+#horizontal{
     display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+#horizontal>div{
+    display: flex;
+    flex-grow: 6;
+}
+#horizontal>div>div{
+    margin: 0 20px;
+}
+#horizontal>h3{
+    width: 254px;
+    margin-right: 25px;;
 }
 #filter{
     display: flex;
     flex-direction: column;
+    /* width:1000px; */
+}
+#filter>div{
+    padding: 25px;
+    border: 1px solid gray;
+}
+#filter h3{
+    margin-bottom: 15px;
 }
 #container-parent{
-    width:80%;
+    padding:25px;
+    border: 1px solid gray;
 }
 #container{
     width:100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-    border: 1px solid black;
 }
 #container>div>img{
     width: 100%;
@@ -32,4 +57,10 @@
 .price>span{
     color:#ff905a;
     font-size: 12px
+}
+.mb{
+    margin-bottom: -10px;
+}
+.active{
+    background-color: #ff905a;
 }

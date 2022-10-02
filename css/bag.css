@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+}
+body>div:nth-child(4){
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    min-height: 1000px;
+}
+body>div:nth-child(4), h1{
+    padding: 0 50px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#container>div{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#container img{
+    width:100px;
+    object-fit: cover;
+}
+/* text-area */
+#container>div>div:nth-child(2){
+    width:40%;
+}
+/* functional area */
+#container>div>div:nth-child(3){
+    width:30%;
+}
+#container>div>div:nth-child(3)>input{
+    width: 35px;
+}
+#expMonth, #expYear{
+    width: 50px;
+}
+#details{
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#details h2{
+    text-align: center;
+}
+#payment{
+    margin: 40px 0;
+}
+td{
+    padding: 10px 20px;
+}
