@@ -1,0 +1,35 @@
+#footer{
+    background-color: #fafbfc;
+    padding: 40px 250px;
+}
+#footer a{
+    color:#696b79;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+}
+#_1{
+    display: flex;
+}
+#_11{
+    display: flex;
+    flex-direction:column;
+}
+#_111, #_112, #_12, #_13{
+    display: flex;
+    flex-direction: column;
+}
+#_1>div{
+    margin-right:40px;
+}
+h5{
+    margin-bottom: 20px;
+}
+#_112, #_2{
+    margin-top: 20px;
+}
+#buttons>img{
+    height:40px;
+    cursor: pointer;
+}

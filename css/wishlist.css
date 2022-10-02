@@ -1,0 +1,19 @@
+#item-box{
+    width: 90%;
+    margin: auto;
+    min-height:1000px;
+}
+#items{
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+#items img{
+    width: 100%;
+}
+.cross{
+    position: absolute;
+    display: block;
+    margin-bottom: -50px;           
+    cursor: pointer;
+}

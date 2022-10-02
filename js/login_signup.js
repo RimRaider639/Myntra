@@ -1,3 +1,6 @@
+let digits = '1234567890'
+// let loggedin = localStorage.getItem('loggedin')
+
 // remove profile clickable on navbar
 document.querySelector('.ic-text:nth-Child(1)').style.display = "none"
 
@@ -65,10 +68,16 @@ function displayOTP(){
     otpSec.id = "otp"
     for (let i=0; i<4; i++){
         let num = document.createElement('input')
-        num.type="number"
+        num.type="text"
         num.size = "1"
         num.maxLength = "1"
         otpSec.append(num)
+        num.addEventListener('change',function(){
+            console.log(!digits.includes(num.value))
+            if (!digits.includes(num.value)){
+                num.value = ''
+            }
+        })
     }
     let submit = document.createElement('input')
     submit.type = "submit"
@@ -91,19 +100,26 @@ function storeNum(event){
     }
     localStorage.setItem('phoneNum', mbl)
     window.location.reload()
-    validate(mbl)
 }
 
-function storeOTP(){
+function storeOTP(event){
+    event.preventDefault()
     let otp = "";
     for (let i=1; i<5; i++){
         otp+= document.querySelector('#otp>input:nth-child('+i+')').value
     }
     localStorage.setItem("otp", otp)
-    console.log(otp)
+    validate()
 }
 
-function validate(num){
-    // let retrieveNum =  
+function validate(){
+    let retrieved = localStorage.getItem('otp')
+    console.log(retrieved)
+    if (retrieved=='1234'){
+        localStorage.setItem('loggedin', true)
+        window.location.href = 'mens.html'
+    } else{
+        alert('invalid OTP')
+    }
 }
 

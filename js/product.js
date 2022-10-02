@@ -1,5 +1,5 @@
 let bag = JSON.parse(localStorage.getItem("bag")) || []
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
+let wishlist = JSON.parse(localStorage.getItem("wl")) || []
 
 displayProd(localStorage.getItem("prodID"))
 function displayProd(prodID){
@@ -28,9 +28,9 @@ function displayProd(prodID){
     let price = document.createElement("h2")
     price.innerHTML="Rs."+product.variant_price + (product.variant_compare_at_price==product.variant_price?"":"<strike> Rs." + product.variant_compare_at_price + " </strike>") + "<span>" + (product.variant_compare_at_price==product.variant_price?"":"("+Math.round((1-(+product.variant_price/+product.variant_compare_at_price))*100)+"% OFF)") + "</span><br><span>inclusive of all taxes</span>"
     price.id = 'rate'
-    let bag = document.createElement("button")
-    bag.innerHTML = '<span class="material-symbols-outlined material">shopping_bag</span> Add to bag'
-    bag.addEventListener('click', function(){
+    let add2bag = document.createElement("button")
+    add2bag.innerHTML = '<span class="material-symbols-outlined material">shopping_bag</span> Add to bag'
+    add2bag.addEventListener('click', function(){
         storeItems('bag', product)
     })
     let wl = document.createElement("button")
@@ -51,7 +51,7 @@ function displayProd(prodID){
     let desc = document.createElement('p')
     desc.innerText = product.product_details
     
-    details.append(brand, title, rate, price, bag, wl, sizeLbl, allSizes, descLbl, desc)
+    details.append(brand, title, rate, price, add2bag, wl, sizeLbl, allSizes, descLbl, desc)
 }
 
 function storeItems(place, prod){
@@ -67,12 +67,15 @@ function storeItems(place, prod){
         in_stock: prod.is_in_stock,
         inventory: +prod.inventory
     }
-    console.log(prodInfo)
     if (place=='bag'){
+        bag = JSON.parse(localStorage.getItem('bag'))
         bag.push(prodInfo)
         localStorage.setItem('bag', JSON.stringify(bag))
+        
     } else if (place=='wl'){
+        wishlist = JSON.parse(localStorage.getItem('wl'))
         wishlist.push(prodInfo)
         localStorage.setItem('wl', JSON.stringify(wishlist))
+        
     }
 }

@@ -18,7 +18,7 @@ let womensAll = objData.map(function(prod){
   womensAll = womensAll.filter(function(prod){
     return prod!= undefined;
   })
-  womensAll = womensAll.slice(0, 100)
+
   localStorage.getItem("womensALL") || localStorage.setItem("womensAll", JSON.stringify(womensAll))
 
   let brands_women = JSON.parse(localStorage.getItem("brands_women")) || {}
