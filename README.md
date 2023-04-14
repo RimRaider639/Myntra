@@ -24,6 +24,10 @@
 
 ![image](https://user-images.githubusercontent.com/112859531/222212317-d63eaf3f-b488-4e3d-8b98-6fc6933acd74.png)
 
+## Wishlist 
+
+![image](https://user-images.githubusercontent.com/112859531/232110623-ea8639b6-bd32-45a3-8a6e-2ceb1a5300a9.png)
+
 ## Bag
 
 ![image](https://user-images.githubusercontent.com/112859531/222212751-ac364a9d-9669-492a-b3ec-38ec05350325.png)
