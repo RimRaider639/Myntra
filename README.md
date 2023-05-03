@@ -4,6 +4,13 @@
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
+## Features:
+- Mens & womens products page
+- Dynamic filtering, sorting, pagination
+- User login/register (localstorage)
+- Product details, cart & wishlist
+
+
 ## Landing Page
 
 ![image](https://user-images.githubusercontent.com/112859531/222210545-94a395b5-2db8-47a5-8048-f4e0d1f41485.png)
